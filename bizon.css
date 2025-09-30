@@ -1,0 +1,511 @@
+@import url("https://fonts.cdnfonts.com/css/futura-pt");
+.bizon * {
+  font-family: "Futura PT", sans-serif !important;
+  margin: 0;
+}section.container {
+  display: none;
+}
+
+html {
+  margin: 0;
+}
+
+.bizon {
+  background-size: cover !important;
+  background-position: top center !important;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.bizon_main {
+  width: 89.58vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 4vw 0;
+}
+
+.bizon_rg {
+  width: 40.63vw;
+}
+
+.bizon_rg {
+  border-radius: 1.56vw;
+  background: -o-linear-gradient(301deg, #FFF 3.18%, #E8E8E8 53.83%, #B6B6B6 100%);
+  background: linear-gradient(149deg, #FFF 3.18%, #E8E8E8 53.83%, #B6B6B6 100%);
+  width: 100%;
+  max-width: 40.63vw;
+}
+
+.bizon_form {
+  margin: 0 4.17vw;
+  padding: 3.65vw 0 3.65vw;
+}
+
+p.bizon_t1 {
+  color: #373737;
+  font-family: Futura PT;
+  font-size: 2.81vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  /* 59.4px */
+  margin: 0 0 2.08vw;
+}
+
+body {
+  margin: 0;
+}
+
+.bizon_img img {
+  width: 39.58vw;
+  height: 41.2vw;
+}
+
+.bizon_it_t1 {
+  color: #8A8A8A;
+  font-size: 1.15vw;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 110%;
+  /* 24.2px */
+  margin: 0 0 0.36vw;
+}
+
+p.bizon_it_t2 {
+  color: #373737;
+  font-size: 1.35vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  /* 28.6px */
+  margin: 0;
+}
+
+.bizon_it {
+  margin: 0 0 1.04vw;
+}
+
+.bizon_it_line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.04vw;
+}
+
+p.bizon_it_t3 {
+  color: #8A8A8A;
+  font-size: 1.15vw;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 110%;
+  /* 24.2px */
+}
+
+p.bizon_it_t3 b {
+  color: #373737;
+  font-size: 1.35vw;
+}
+
+p.bizon_form_t1 {
+  color: #8A8A8A;
+  font-size: 1.15vw;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 110%;
+  /* 24.2px */
+  margin: 0 0 0.52vw;
+}
+
+.bizon_form_box {
+  width: 17.71vw;
+}
+
+.bizon_input input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 17.71vw;
+  height: 2.81vw;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.52vw;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  text-indent: 1.56vw;
+  color: #000;
+  font-family: Futura PT;
+  font-size: 0.94vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 25.2px */
+  border-radius: 0.36vw;
+  border: 1px solid #000;
+  padding: 0;
+}
+
+.bizon_input {
+  margin: 0 0 1.04vw;
+}
+
+button.btns {
+  border-radius: 0.36vw;
+  background: -o-linear-gradient(178deg, #116256 -45.71%, #3BB37D 119.01%);
+  background: linear-gradient(272deg, #116256 -45.71%, #3BB37D 119.01%);
+  width: 100%;
+  border: 0;
+  height: 3.39vw;
+  color: var(--, #FFF);
+  font-family: Futura PT;
+  font-size: 0.94vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  /* 25.2px */
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  padding: 0;
+  cursor: pointer;
+}
+
+button.btns:hover {
+  -webkit-filter: saturate(1.5);
+  filter: saturate(1.5);
+}
+
+.polits p {
+  margin: 0.52vw 0 0 !important;
+  color: #8A8A8A;
+  font-family: Futura PT;
+  font-size: 0.94vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  /* 19.8px */
+  max-width: 15.36vw;
+}
+
+.polits p a {
+  text-decoration: none !important;
+  border-bottom: 1px solid;
+}
+
+.bizon_lf {
+  max-height: 36vw;
+}
+
+.layoutChatFixedRight #room_panel {
+  border-radius: 4px;
+  background: #F7F7F7;
+  box-shadow: none !important;
+  margin: 30px 0 0;
+}
+
+section.container-fluid.layoutChatFixedRight {
+  background: #fff;
+}
+
+span#totalUsersInRoom {
+  color: #8A8A8A;
+  font-family: Futura PT;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 110%; /* 24.2px */
+}
+
+.toolbtns .btn {
+  color: #fff;
+  font-family: Futura PT;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 19.6px */
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  border-radius: 7px;
+  background: linear-gradient(272deg, #116256 -45.71%, #3BB37D 119.01%);
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span.toolbtns.pull-right {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+div#userlistframe span {
+  border-radius: 3px !important;
+  background: #fff;
+  font-family: Futura PT;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 19.6px */
+  padding: 0;
+  height: 24px;
+  display: flex;
+  color: #4F4F4F;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+div#userlistframe {
+  display: flex;
+  gap: 4px;
+}
+
+ 
+
+div#userlistframe span.label.label-danger {
+  background: #DFC789;
+  color: #fff;
+}
+
+div#userlistframe span >* { display:none;}
+ 
+
+.chatul li.msg.myMsg span.msgbody, li.msg span.msgbody {
+  background: #fff;
+  border-color: #fff;
+  font-family: Futura PT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 28px */
+  padding: 6px 14px;
+}
+li.msg span.user {
+  color: #8A8A8A;
+  font-family: Futura PT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 110%; /* 19.8px */
+}
+
+li.msg span.time {
+  color: #8A8A8A;
+  font-family: Futura PT;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 110%; /* 19.8px */
+}
+
+.chatul li {
+  margin: 0 0 12px;
+}
+.chatul li.msg.myMsg span.msgbody.chatul li.msg.moder span.msgbody, .chatul li.msg.jeeves span.msgbody, .chatul li.msg.admin span.msgbody, .chatul li.msg.superadmin span.msgbody {
+  background: #DFC789;
+  color: #fff;
+  border: 0;
+  font-family: Futura PT;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  padding: 6px 14px;
+}
+
+.layoutChatFixedRight .header {
+  margin: 30px 0 0;
+  box-shadow: none;
+  background: none;
+}
+
+h1.webinar_title {
+  color: #373737;
+  text-align: center;
+  font-family: Futura PT;
+  font-size: 2.5vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 59.4px */
+  padding: 0 0 17px;
+}
+
+.premoder_list li, .chatul li, #chatform input {}
+
+#room .form1 input {
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(17, 98, 86, 0.25);
+    border: navajowhite;
+    height: 49px;
+}
+
+#room .form1 {
+    display: grid;
+    grid-template-columns: auto 25%;
+    gap: 10px;
+}
+
+#room .form1 .btn-addon {
+    width: 100%;
+    background: no-repeat;
+    border: 0;
+}
+
+#room .form1 button[type=submit] {
+    height: 100%;
+    width: 100%;
+    border-radius: 7px;
+    background: linear-gradient(272deg, #116256 -45.71%, #3BB37D 119.01%);
+    color: var(--, #FFF);
+    font-family: Futura PT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 25.2px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+}
+@media only screen and (max-width: 680px) {
+  .bizon_main {
+    width: 92vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10vw 0 0;
+  }
+  .bizon_lf {
+    order: 2;
+    width: 100%;
+}
+
+.bizon_rg {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+.bizon {
+    align-items: flex-start;
+}
+
+.bizon_form {
+    margin: 0 8%;
+    padding: 8vw 0;
+}
+
+p.bizon_t1 {
+    font-size: 8vw;
+    margin: 0 0 7vw;
+}
+
+p.bizon_t1 br {
+    display: none;
+}
+
+p.bizon_it_t1 {
+    font-size: 5vw;
+}
+
+p.bizon_it_t2 {
+    font-size: 5vw;
+}
+
+p.bizon_it_t3 {
+    font-size: 4vw;
+}
+
+.bizon_it_line {
+    gap: 0 5vw;
+}
+
+.bizon_it {
+    margin: 0 0 5vw;
+}
+
+p.bizon_form_t1 {
+    font-size: 4vw;
+    margin: 0 0 2vw;
+}
+
+.bizon_form_box_list {
+    width: 100%;
+}
+
+.bizon_form_box_item.name_inp {
+    width: 100% !important;
+    margin: 0 0 4vw;
+}
+
+.bizon_input input {
+    background: none;
+    height: 12vw;
+    border-radius: 2vw;
+    font-size: 4.5vw;
+    text-indent: 3vw;
+    width: 100%;
+}
+
+.bizon_form_box_item {
+    width: 100% !important;
+}
+
+button.btns {
+    height: 14vw;
+    border-radius: 2vw;
+    font-size: 4vw;
+}
+
+.polits p {
+    font-size: 4vw;
+    max-width: 100%;
+    margin: 3vw 0 0 !important;
+    text-align: center;
+}
+
+.bizon_img {
+    width: 79vw;
+    margin: 6vw auto 0;
+    max-height: max-content;
+}
+
+.bizon_img img {
+    height: auto;
+    width: 112%;
+}
+
+.bizon {
+    background-size: cover !important;
+}
+.bizon_form_box {
+  width: 100%;
+}
+
+input.name_inp {}
+.bizon_lf {max-height: max-content;}
+}

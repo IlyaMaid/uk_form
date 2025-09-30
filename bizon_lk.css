@@ -1,0 +1,228 @@
+@import url("https://fonts.cdnfonts.com/css/futura-pt");
+
+section.container-fluid {
+    background: #fff !important;
+}
+
+div#room_panel {
+    margin: 30px 0 0;
+    border-radius: 4px 0 0 4px;
+    background: #F7F7F7;
+    box-shadow: none;
+}
+
+.header {
+    box-shadow: none !important;
+    background: none !important;
+}
+li.msg span.msgbody {
+    background: #fff;
+}
+h1.webinar_title {
+    margin: 16px 0 0;
+    color: #373737;
+    text-align: center;
+    font-family: Futura PT;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 59.4px */
+    padding: 9px 0;
+}
+
+.customUserImage div {
+    box-shadow: none !important;
+}
+
+#webinarContent #presentation {
+    box-shadow: none !important;
+    border-radius: 4px;
+}
+
+#webinarContent #contentHolder {
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.eventCountdown {
+    color: #373737;
+    font-family: Futura PT;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 33px */
+    margin: 2vw 0 2vw;
+}
+
+.eventCountdown span {
+    color: #116256;
+    font-family: Futura PT;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 35.2px */
+}
+
+.toolbtns .btn {
+    border-radius: 7px;
+    background: linear-gradient(272deg, #116256 -45.71%, #3BB37D 119.01%);
+    color: #fff;
+    font-family: Futura PT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    font-size: 11px;
+    border: 0;
+    padding: 6px 7px;
+}
+
+.label {}
+
+div#userlistframe label {
+    border-radius: 3px;
+    background: #FFF !important;
+}
+
+div#userlistframe span {
+    border-radius: 3px;
+    background: #FFF;
+    color: #4F4F4F;
+    font-family: Futura PT;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+    border-radius: 3px;
+    padding: 5px 8px;
+    display: inline-block;
+}
+
+div#userlistframe span span { display:none}
+
+div#userlistframe span.label.label-danger {
+    background: #DFC789;
+    color: #fff;
+    background: linear-gradient(272deg, #116256 -45.71%, #3BB37D 119.01%);
+    color: #fff;
+}
+
+div#userlistframe span span { display:none}
+div#usercountframe {
+    margin: 0 0 2vw;
+}
+
+span#totalUsersInRoom {
+    color: #8A8A8A;
+    font-family: Futura PT;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 110%; /* 24.2px */
+}
+input#inputmsg {
+    border-radius: 7px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(17, 98, 86, 0.25);
+    border: 0;
+    padding: 14px 14px;
+    display: block;
+    height: auto;
+}
+
+#room .form1 {
+    display: grid;
+    grid-template-columns: auto 30%;
+    gap: 6px;
+}
+
+#room .form1 button[type=submit] {
+    width: 100%;
+    border-radius: 7px !important;
+    background: linear-gradient(272deg, #116256 -45.71%, #3BB37D 119.01%);
+    color: #fff;
+    font-family: Futura PT;
+    font-size: 12px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 25.2px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    height: 100% !IMPORTANT;
+}
+
+#room .form1 .btn-addon {
+    width: 100%;
+}
+
+.linksForbiddenIsOn * {
+    color: #4F4F4F !important;
+    font-family: Futura PT;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+}
+
+.linksForbiddenIsOn * .fa {
+    display: none;
+}
+.user-info-block span {
+    color: #8A8A8A !important;
+    font-family: Futura PT;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 110%; /* 19.8px */
+    margin: 0 11px 10px 0 !important;
+}
+
+li.msg div.user-info-block {
+    margin: 0 0 5px;
+    display: block;
+}
+
+.chatul li {
+    margin: 0 0 14px;
+}
+
+.chatul li.msg.myMsg span.msgbody {
+    background: #FFF;
+    border: 0;
+    color: #4F4F4F;
+}
+
+li.msg span.msgbody {
+    border: 0;
+    font-size: 15px;
+    padding: 6px 12px;
+}
+.chatul li.msg.moder span.msgbody, .chatul li.msg.jeeves span.msgbody, .chatul li.msg.admin span.msgbody, .chatul li.msg.superadmin span.msgbody {
+    background: #DFC789;
+    color: #fff;
+    background: linear-gradient(272deg, #116256 -45.71%, #3BB37D 119.01%);
+    color: #fff;
+}
+@media only screen and (max-width: 680px) {
+    h1.webinar_title {
+        font-size: 22px;
+    }#room .form1 {
+        grid-template-columns: auto 33%;
+    }
+ 
+    .toolbtns .btn {
+        margin: 0 0 6vw;
+    }
+    
+    div#usercountframe {
+        margin: 0 0 8vw;
+    }
+ 
+ 
+    #webinarContent, #webinarContent #video, #webinarContent #video iframe {
+        min-height: 206px;
+    }
+ 
+}
