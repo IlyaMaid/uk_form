@@ -49,22 +49,29 @@ $(document).ready(function() {
         $("#input-useremail").val(email);
     });
     
-    $(document).on('input', ".phone_inp input", function() {
-        var phone = $(this).val();
-        if (phone.startsWith('+01')) {
-            if (/^\+01[0-9]{9,}$/.test(phone)) {
-                $("#input-userphone").val(phone);
-            }
-        } else {
+    // $(document).on('input', ".phone_inp input", function() {
+    //     var phone = $(this).val();
+    //     if (phone.startsWith('+01')) {
+    //         if (/^\+01[0-9]{9,}$/.test(phone)) {
+    //             $("#input-userphone").val(phone);
+    //         }
+    //     } else {
 
-            $("#input-userphone").val(phone);
-        }
-    });
+    //         $("#input-userphone").val(phone);
+    //     }
+    // });
 
     $(document).on('click', ".btns", function() {
-        $("#btnLogin").trigger("click");
-        if ($(".alert-danger").text().length > 3) {
-            $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
-        }
+          var phone = $('.phone_inp input');
+          if (phone.startWith('+0') and phone.length = ) {  //and колво в номере
+            //записать после обработки значение phone и затереть 0, другие символы
+            $("#btnLogin").trigger("click"); }
+                   else { //код вывода ошибки
+        
+    }
+            if ($(".alert-danger").text().length > 3) {
+                $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
+            }
+    
     });
 });
