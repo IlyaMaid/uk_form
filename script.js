@@ -51,7 +51,7 @@ $(document).ready(function() {
     
     $(document).on('input', ".phone_inp input", function() {
         var phone = $(this).val();
-        if (phone.startsWith('+0')) {
+        if (phone.startsWith('+01')) {
             if (/^\+01[0-9]{9,}$/.test(phone)) {
                 $("#input-userphone").val(phone);
             }
