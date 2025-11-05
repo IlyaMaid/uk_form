@@ -73,6 +73,8 @@ $(document).ready(function() {
 
     if (cleanPhone.startsWith('+01') && cleanPhone.length === 12) {
         console.log('Номер валиден');
+        var bitrixPhone = '+1' + cleanPhone.substring(3);
+        console.log('Номер для Bitrix:', bitrixPhone);
         $("#input-userphone").val(cleanPhone);
     } else { 
         $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите номер в формате +01XXXXXXXXX (12 символов)</div>');
