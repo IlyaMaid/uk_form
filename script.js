@@ -62,16 +62,16 @@ $(document).ready(function() {
     // });
 
     $(document).on('click', ".btns", function() {
-          var phone = $('.phone_inp input');
-          if (phone.startWith('+0') and phone.length = ) {  //and колво в номере
-            //записать после обработки значение phone и затереть 0, другие символы
-            $("#btnLogin").trigger("click"); }
-                   else { //код вывода ошибки
-        
-    }
-            if ($(".alert-danger").text().length > 3) {
+          var phone = $('.phone_inp input').val();
+          var cleanPhone = phoneValue.replace(/[^\d+]/g, '');
+          if (cleanPhone.startWith('+0') and cleanPhone.length == 12) {
+              $("#input-userphone").val(cleanPhone);
+          } else { 
+            $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите номер в формате +01XXXXXXXXX (12 символов)</div>');
+          }
+          if ($(".alert-danger").text().length > 3) {
                 $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
-            }
+          }
     
     });
 });
