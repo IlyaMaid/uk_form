@@ -65,8 +65,16 @@ $(document).ready(function() {
     var phone = $('.phone_inp input').val();
     var cleanPhone = phone.replace(/[^\d+]/g, '');
     
-    if (cleanPhone.startsWith('+01') && cleanPhone.length >= 11 && cleanPhone.length <= 13) {
-        $("#input-userphone").val(cleanPhone);
+    console.log('Введенный номер:', phone);
+    console.log('Очищенный номер:', cleanPhone);
+    console.log('Длина номера:', cleanPhone.length);
+    console.log('Начинается с +01:', cleanPhone.startsWith('+01'));
+    
+    // Если поле телефона видимо, проверяем его
+    if ($('.phone_inp').is(':visible')) {
+        if (cleanPhone.startsWith('+01') && cleanPhone.length === 12) {
+            console.log('Номер валиден');
+            $("#input-userphone").val(cleanPhone);
         } else { 
             $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите номер в формате +01XXXXXXXXX (12 символов)</div>');
         }
