@@ -64,10 +64,10 @@ $(document).ready(function() {
     $(document).on('click', ".btns", function() {
           var phone = $('.phone_inp input').val();
           var cleanPhone = phoneValue.replace(/[^\d+]/g, '');
-          if (cleanPhone.startWith('+0') and cleanPhone.length == 12) {
+          if (cleanPhone.startsWith('+01') && cleanPhone.length >= 11 && cleanPhone.length <= 13) {
               $("#input-userphone").val(cleanPhone);
           } else { 
-            $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите номер в формате +01XXXXXXXXX (12 символов)</div>');
+              $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите номер в формате +01XXXXXXXXX (12 символов)''+$(".alert-danger").html()+'</div>');
           }
           if ($(".alert-danger").text().length > 3) {
                 $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
