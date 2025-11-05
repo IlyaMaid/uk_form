@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     $(document).on('click', ".btns", function() {
           var phone = $('.phone_inp input').val();
-          var cleanPhone = phoneValue.replace(/[^\d+]/g, '');
+          var cleanPhone = phone.replace(/[^\d+]/g, '');
           if (cleanPhone.startsWith('+01') && cleanPhone.length >= 11 && cleanPhone.length <= 13) {
               $("#input-userphone").val(cleanPhone);
           } else { 
