@@ -70,7 +70,7 @@ $(document).ready(function() {
         } else { 
             $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите номер в формате +01XXXXXXXXX (12 символов)</div>');
         }
-    }
+    
     if ($(".alert-danger").text().length > 3) {
         $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
     }
