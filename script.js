@@ -55,6 +55,7 @@ $(document).ready(function() {
         if (cleanPhone.startsWith('+01')) {
             cleanPhone = cleanPhone.replace('+01', '+1');
         return cleanPhone;
+        }
     }
 
     $(document).on('input', ".phone_inp input", function() {
