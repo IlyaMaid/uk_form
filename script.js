@@ -49,40 +49,57 @@ $(document).ready(function() {
         $("#input-useremail").val(email);
     });
     
-    // $(document).on('input', ".phone_inp input", function() {
-    //     var phone = $(this).val();
-    //     if (phone.startsWith('+01')) {
-    //         if (/^\+01[0-9]{9,}$/.test(phone)) {
-    //             $("#input-userphone").val(phone);
-    //         }
-    //     } else {
+    function formatPhoneNumber(phone) {
+        var cleanPhone = phone.replace(/[^\d+]/g, '');
+        
+        if (cleanPhone.startsWith('+01')) {
+            cleanPhone = '+1' + cleanPhone.substring(3);
+        }
+        else if (cleanPhone.startsWith('01')) {
+            cleanPhone = '+1' + cleanPhone.substring(2);
+        }
+        else if (cleanPhone.startsWith('1') && !cleanPhone.startsWith('+')) {
+            cleanPhone = '+' + cleanPhone;
+        }
+        return cleanPhone;
+    }
 
-    //         $("#input-userphone").val(phone);
-    //     }
-    // });
+    $(document).on('input', ".phone_inp input", function() {
+        var phone = $(this).val();
+        var formattedPhone = formatPhoneNumber(phone);
+        $("#input-userphone").val(formattedPhone);
+    });
 
     $(document).on('click', ".btns", function() {
-    var phone = $('.phone_inp input').val();
-    var cleanPhone = phone.replace(/[^\d+]/g, '');
-    
-    console.log('Введенный номер:', phone);
-    console.log('Очищенный номер:', cleanPhone);
-    console.log('Длина номера:', cleanPhone.length);
-    console.log('Начинается с +01:', cleanPhone.startsWith('+01'));
-    
-
-    if (cleanPhone.startsWith('+01') && cleanPhone.length === 12) {
-        console.log('Номер валиден');
-        var bitrixPhone = '+1' + cleanPhone.substring(3);
-        console.log('Номер для Bitrix:', bitrixPhone);
-        $("#input-userphone").val(cleanPhone);
-    } else { 
-        $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите номер в формате +01XXXXXXXXX (12 символов)</div>');
-    }
-    
-    if ($(".alert-danger").text().length > 3) {
-        $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
-    }
-    
+        var phone = $('.phone_inp input').val();
+        var formattedPhone = formatPhoneNumber(phone);
+        
+        console.log('Введенный номер:', phone);
+        console.log('Форматированный номер:', formattedPhone);
+        console.log('Длина номера:', formattedPhone.length);
+        
+        // Проверяем валидность номера
+        if (formattedPhone.startsWith('+1') && formattedPhone.length === 12) {
+            console.log('Номер валиден');
+            $("#input-userphone").val(formattedPhone);
+            
+            // Удаляем предыдущие сообщения об ошибках
+            $(".autherror").remove();
+            
+            // Отправляем форму
+            // Добавьте здесь код для отправки формы
+        } else { 
+            // Удаляем предыдущие сообщения об ошибках
+            $(".autherror").remove();
+            
+            $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите корректный номер телефона</div>');
+            return false; // Предотвращаем отправку формы
+        }
+        
+        // Дополнительная проверка на другие ошибки
+        if ($(".alert-danger").length > 0 && $(".alert-danger").text().length > 3) {
+            $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>');
+            return false;
+        }
     });
 });
