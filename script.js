@@ -61,17 +61,20 @@ $(document).ready(function() {
         $("#input-userphone").val(phone);
     });
     $(document).on('click', ".btns", function(e) {
-        let phone = $("#input-userphone").val();
+    e.preventDefault();
+
+    let phone = $("#input-userphone").val().trim();
         if (phone.startsWith('+0') && phone.length > 2) {
             phone = '+' + phone.substring(2);
             $('.phone_inp input').val(phone);
             $("#input-userphone").val(phone);
+            $("#btnLogin").trigger("click");
         }
+    
         if (!/^\+[1-9][0-9]{6,14}$/.test(phone)) {
             $(".bizon_form").append(
-                '<div class="alert alert-danger autherror">Неверный формат: +[код страны без 0][номер], пример +15551234567 или +79510617283</div>'
-            );
-        }
+                '<div class="alert alert-danger autherror">Неверный формат: +79510617283</div>'
+        );
         if ($(".alert-danger").text().length > 3) {
             $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>');
         }
