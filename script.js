@@ -53,14 +53,7 @@ $(document).ready(function() {
         var cleanPhone = phone.replace(/[^\d+]/g, '');
         
         if (cleanPhone.startsWith('+01')) {
-            cleanPhone = '+1' + cleanPhone.substring(3);
-        }
-        else if (cleanPhone.startsWith('01')) {
-            cleanPhone = '+1' + cleanPhone.substring(2);
-        }
-        else if (cleanPhone.startsWith('1') && !cleanPhone.startsWith('+')) {
-            cleanPhone = '+' + cleanPhone;
-        }
+            cleanPhone = cleanPhone.replace('+01', '+1');
         return cleanPhone;
     }
 
@@ -73,33 +66,14 @@ $(document).ready(function() {
     $(document).on('click', ".btns", function() {
         var phone = $('.phone_inp input').val();
         var formattedPhone = formatPhoneNumber(phone);
-        
-        console.log('Введенный номер:', phone);
-        console.log('Форматированный номер:', formattedPhone);
-        console.log('Длина номера:', formattedPhone.length);
-        
-        // Проверяем валидность номера
         if (formattedPhone.startsWith('+1') && formattedPhone.length === 12) {
-            console.log('Номер валиден');
             $("#input-userphone").val(formattedPhone);
-            
-            // Удаляем предыдущие сообщения об ошибках
-            $(".autherror").remove();
-            
-            // Отправляем форму
-            // Добавьте здесь код для отправки формы
         } else { 
-            // Удаляем предыдущие сообщения об ошибках
-            $(".autherror").remove();
-            
             $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите корректный номер телефона</div>');
-            return false; // Предотвращаем отправку формы
         }
-        
-        // Дополнительная проверка на другие ошибки
-        if ($(".alert-danger").length > 0 && $(".alert-danger").text().length > 3) {
-            $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>');
-            return false;
-        }
+        // if ($(".alert-danger").text().length > 3) {
+        //     $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
+        // }
+    
     });
 });
