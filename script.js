@@ -49,34 +49,27 @@ $(document).ready(function() {
         $("#input-useremail").val(email);
     });
     
-    function formatPhoneNumber(phone) {
-        var cleanPhone = phone.replace(/[^\d+]/g, '');
-        
-        if (cleanPhone.startsWith('+01')) {
-            cleanPhone = cleanPhone.replace('+01', '+1');
-        return cleanPhone;
+    $(document).on('input', ".phone_inp input", function() {
+        var phone = $(this).val().replace(/[^0-9+]/g, '');
+            if (phone.startsWith('+01') && phone.length > 3) {
+            phone = '+1' + phone.substring(3);
+            $(this).val(phone); 
         }
-    }
-
-    // $(document).on('input', ".phone_inp input", function() {
-    //     var phone = $(this).val();
-    //     var formattedPhone = formatPhoneNumber(phone);
-    //     console.log(formattedPhone);
-    //     $("#input-userphone").val(formattedPhone);
-    // });
+            $("#input-userphone").val(phone);
+    });
 
     $(document).on('click', ".btns", function() {
-        var phone = $('.phone_inp input').val();
-        var formattedPhone = formatPhoneNumber(phone);
-        
-        if (formattedPhone.startsWith('+1') && formattedPhone.length === 12) {
-            $("#input-userphone").val(formattedPhone);
-        } else { 
-            $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите корректный номер телефона</div>');
-        }
-        if ($(".alert-danger").text().length > 3) {
-            $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
-        }
+        const phone = $("#input-userphone").val();
     
+        if (/^\+1[0-9]{10,}$/.test(phone)) {
+            $("#btnLogin").trigger("click");
+        } else {
+            $(".bizon_form").append(
+                '<div class="alert alert-danger autherror">Неверный формат телефона. Используйте: +1XXXXXXXXXX</div>'
+            );
+        }
+            if ($(".alert-danger").text().length > 3) {
+            $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>');
+        }
     });
 });
