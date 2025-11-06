@@ -51,17 +51,13 @@ $(document).ready(function() {
     
     $(document).on('input', ".phone_inp input", function() {
         let phone = $(this).val().replace(/[^0-9+]/g, '');
-    
         if (/^[0-9]/.test(phone) && !phone.startsWith('+')) {
             phone = '+' + phone;
         }
-    
         if (phone.startsWith('+0') && phone.length > 2 && /[0-9]/.test(phone[2])) {
             phone = '+' + phone.substring(2);
-            $(this).val(phone);
         }
-    
-        $(this).val(phone);
+        
         $("#input-userphone").val(phone);
     });
     $(document).on('click', ".btns", function(e) {
@@ -71,7 +67,7 @@ $(document).ready(function() {
             $('.phone_inp input').val(phone);
             $("#input-userphone").val(phone);
         }
-        if (!/^\+[1-9][0-9]{6,14}$/.test(phone)) { // Код страны НЕ начинается с 0
+        if (!/^\+[1-9][0-9]{6,14}$/.test(phone)) {
             $(".bizon_form").append(
                 '<div class="alert alert-danger autherror">Неверный формат: +[код страны без 0][номер], пример +15551234567 или +79510617283</div>'
             );
