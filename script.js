@@ -58,15 +58,17 @@ $(document).ready(function() {
         }
     }
 
-    $(document).on('input', ".phone_inp input", function() {
-        var phone = $(this).val();
-        var formattedPhone = formatPhoneNumber(phone);
-        $("#input-userphone").val(formattedPhone);
-    });
+    // $(document).on('input', ".phone_inp input", function() {
+    //     var phone = $(this).val();
+    //     var formattedPhone = formatPhoneNumber(phone);
+    //     console.log(formattedPhone);
+    //     $("#input-userphone").val(formattedPhone);
+    // });
 
     $(document).on('click', ".btns", function() {
         var phone = $('.phone_inp input').val();
         var formattedPhone = formatPhoneNumber(phone);
+        
         if (formattedPhone.startsWith('+1') && formattedPhone.length === 12) {
             $("#input-userphone").val(formattedPhone);
         } else { 
