@@ -72,9 +72,9 @@ $(document).ready(function() {
         } else { 
             $(".bizon_form").append('<div class="alert alert-danger autherror">Пожалуйста, введите корректный номер телефона</div>');
         }
-        // if ($(".alert-danger").text().length > 3) {
-        //     $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
-        // }
+        if ($(".alert-danger").text().length > 3) {
+            $(".bizon_form").append('<div class="alert alert-danger autherror">'+$(".alert-danger").html()+'</div>')
+        }
     
     });
 });
