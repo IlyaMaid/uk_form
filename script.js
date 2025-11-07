@@ -60,9 +60,9 @@ $(document).ready(function() {
         
         $("#input-userphone").val(phone);
     });
-    
-    $(document).on('click', ".btns", function(e) {
-        e.preventDefault();
+    $(document).on('click', ".btns", function() {
+    // $(document).on('click', ".btns", function(e) {
+        // e.preventDefault();
     
         let phone = $("#input-userphone").val().trim();
     
