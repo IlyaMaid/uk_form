@@ -60,10 +60,7 @@ $(document).ready(function() {
         
         $("#input-userphone").val(phone);
     });
-    $(document).on('click', ".btns", function() {
-    // $(document).on('click', ".btns", function(e) {
-        // e.preventDefault();
-    
+    $(document).on('click', ".btns", function() {    
         let phone = $("#input-userphone").val().trim();
     
         if (phone.startsWith('+0') && phone.length > 2) {
@@ -74,7 +71,7 @@ $(document).ready(function() {
     
         if (!/^\+[1-9][0-9]{6,14}$/.test(phone)) {
             $(".bizon_form").append(
-                '<div class="alert alert-danger autherror">Неверный формат: +79510617283</div>'
+                '<div class="alert alert-danger autherror">Неверный формат</div>'
             );
             if ($(".alert-danger").text().length > 3) {
                 $(".bizon_form").append(
