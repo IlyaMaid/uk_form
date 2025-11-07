@@ -57,28 +57,23 @@ $(document).ready(function() {
         if (phone.startsWith('+0') && phone.length > 2 && /[0-9]/.test(phone[2])) {
             phone = '+' + phone.substring(2);
         }
-        
         $("#input-userphone").val(phone);
     });
-    $(document).on('click', ".btns", function() {    
+    
+    $(document).on('click', ".btns", function() {
         let phone = $("#input-userphone").val().trim();
-    
-        if (phone.startsWith('+0') && phone.length > 2) {
-            phone = '+' + phone.substring(2);
-            $('.phone_inp input').val(phone);
-            $("#input-userphone").val(phone);
+        if (/^\+[1-9][0-9]{6,14}$/.test(phone)) {
+            $("#btnLogin").trigger("click");
+            );
         }
-    
-        if (!/^\+[1-9][0-9]{6,14}$/.test(phone)) {
+        else if ($(".alert-danger").text().length > 3) {
+            $(".bizon_form").append(
+                '<div class="alert alert-danger autherror">' + $(".alert-danger").html() + '</div>'
+            );
+        }
+        else {
             $(".bizon_form").append(
                 '<div class="alert alert-danger autherror">Неверный формат</div>'
-            );
-            if ($(".alert-danger").text().length > 3) {
-                $(".bizon_form").append(
-                    '<div class="alert alert-danger autherror">' + $(".alert-danger").html() + '</div>'
-                );
-            }
         }
-        $("#btnLogin").trigger("click");
         });
 });
