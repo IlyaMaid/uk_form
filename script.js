@@ -64,7 +64,6 @@ $(document).ready(function() {
         let phone = $("#input-userphone").val().trim();
         if (/^\+[1-9][0-9]{6,14}$/.test(phone)) {
             $("#btnLogin").trigger("click");
-            );
         }
         else if ($(".alert-danger").text().length > 3) {
             $(".bizon_form").append(
@@ -74,6 +73,7 @@ $(document).ready(function() {
         else {
             $(".bizon_form").append(
                 '<div class="alert alert-danger autherror">Неверный формат</div>'
+                );
         }
         });
 });
