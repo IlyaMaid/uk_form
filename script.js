@@ -62,6 +62,13 @@ $(document).ready(function() {
     
     $(document).on('click', ".btns", function() {
         $(".alert-danger").remove();
+        let hasErrors = false;
+        let phone = $("input-userphone").val().trim();
+        let email = $("input-usermail").val().trim();
+        let name = $("input-username").val().trim();
+
+
+        
         let phone = $("#input-userphone").val().trim();
         if (/^\+[1-9][0-9]{6,14}$/.test(phone)) {
             $("#btnLogin").trigger("click");
