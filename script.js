@@ -50,7 +50,6 @@ $(document).ready(function() {
     });
     
     $(document).on('input', ".phone_inp input", function() {
-        $(".alert-danger").remove();
         let phone = $(this).val().replace(/[^0-9+]/g, '');
         if (/^[0-9]/.test(phone) && !phone.startsWith('+')) {
             phone = '+' + phone;
@@ -62,6 +61,7 @@ $(document).ready(function() {
     });
     
     $(document).on('click', ".btns", function() {
+        $(".alert-danger").remove();
         let phone = $("#input-userphone").val().trim();
         if (/^\+[1-9][0-9]{6,14}$/.test(phone)) {
             $("#btnLogin").trigger("click");
