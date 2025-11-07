@@ -62,33 +62,26 @@ $(document).ready(function() {
     });
     
     $(document).on('click', ".btns", function(e) {
-        e.preventDefault(); // Отключаем дефолтное поведение
+        e.preventDefault();
     
         let phone = $("#input-userphone").val().trim();
     
-        // Исправляем +0... → +...
         if (phone.startsWith('+0') && phone.length > 2) {
             phone = '+' + phone.substring(2);
             $('.phone_inp input').val(phone);
             $("#input-userphone").val(phone);
         }
     
-        // Валидация
         if (!/^\+[1-9][0-9]{6,14}$/.test(phone)) {
             $(".bizon_form").append(
                 '<div class="alert alert-danger autherror">Неверный формат: +79510617283</div>'
             );
-    
-            // Показываем ошибки от сервера
             if ($(".alert-danger").text().length > 3) {
                 $(".bizon_form").append(
                     '<div class="alert alert-danger autherror">' + $(".alert-danger").html() + '</div>'
                 );
             }
-            return; // Прерываем, если ошибка
         }
-    
-        // === ОБЯЗАТЕЛЬНО: отправка через #btnLogin ===
         $("#btnLogin").trigger("click");
         });
 });
