@@ -61,7 +61,7 @@ $(document).ready(function() {
     });
     
     $(document).on('click', ".btns", function () {
-        $(".alert-danger").remove();
+        $(".bizon_form .field-error").remove();
     
         let hasErrors = false;
     
