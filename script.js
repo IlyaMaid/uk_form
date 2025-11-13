@@ -60,8 +60,11 @@ $(document).ready(function() {
         $("#input-userphone").val(phone);
     });
     
-    $(document).on('click', ".btns", function() {
-    $(".autherror").remove(); // Удаляем предыдущие ошибки
+$(document).on('click', ".btns", function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation(); 
+    $(".autherror").remove();
+
     let hasErrors = false;
 
     const name = $("#input-username").val()?.trim() || "";
@@ -111,4 +114,5 @@ $(document).ready(function() {
         $("#btnLogin").trigger("click");
     }
     });
+
 });
