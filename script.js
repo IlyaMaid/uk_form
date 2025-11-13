@@ -66,12 +66,12 @@ $(document).ready(function() {
         let hasErrors = false;
     
         const nameVal  = $(".name_inp input").val().trim();
-        const emailVal = $(".email_inp input").val().trim();
-        const phoneVal = $(".phone_inp input").val().trim() ;
+        const emailVal = $(".email_inp input").val()?.trim() || "";
+        const phoneVal = $(".phone_inp input").val()?.trim() || "";
     
         if (!nameVal) {
             hasErrors = true;
-            $(".name_inp").closest('.bizon_form_box_item').append('<div class="alert alert-danger autherror">Введите ваше имя</div>');
+            $(".name_inp").closest('.bizon_form_box_item').append('<div class="field-error">Введите ваше имя</div>');
         }
     
         if (emailVal) {
