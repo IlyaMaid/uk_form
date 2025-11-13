@@ -68,35 +68,46 @@ $(document).ready(function() {
         const email = $("#input-useremail").val()?.trim() || "";
         const phone = $("#input-userphone").val()?.trim() || "";
     
-        if (name.length < 2) {
-            if ($(".bizon_form_box_item.name_inp .autherror").length === 0) {
+        if ($("#input-username").length > 0) {
+            if (name === "") {
                 $(".bizon_form_box_item.name_inp").append(
-                    '<div class="alert alert-danger autherror">Введите корректное имя</div>'
+                    '<div class="alert alert-danger autherror">Введите имя</div>'
                 );
+                hasErrors = true;
+            } else if (name.length < 2) {
+                $(".bizon_form_box_item.name_inp").append(
+                    '<div class="alert alert-danger autherror">Имя слишком короткое</div>'
+                );
+                hasErrors = true;
             }
-            hasErrors = true;
         }
     
         if ($("#input-useremail").length > 0) {
             const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailReg.test(email)) {
-                if ($(".bizon_form_box_item.email_inp .autherror").length === 0) {
-                    $(".bizon_form_box_item.email_inp").append(
-                        '<div class="alert alert-danger autherror">Некорректный Email</div>'
-                    );
-                }
+            if (email === "") {
+                $(".bizon_form_box_item.email_inp").append(
+                    '<div class="alert alert-danger autherror">Введите Email</div>'
+                );
+                hasErrors = true;
+            } else if (!emailReg.test(email)) {
+                $(".bizon_form_box_item.email_inp").append(
+                    '<div class="alert alert-danger autherror">Некорректный Email</div>'
+                );
                 hasErrors = true;
             }
         }
     
         if ($("#input-userphone").length > 0) {
             const phoneReg = /^\+[1-9][0-9]{6,14}$/;
-            if (!phoneReg.test(phone)) {
-                if ($(".bizon_form_box_item.phone_inp .autherror").length === 0) {
-                    $(".bizon_form_box_item.phone_inp").append(
-                        '<div class="alert alert-danger autherror">Неверный формат телефона</div>'
-                    );
-                }
+            if (phone === "") {
+                $(".bizon_form_box_item.phone_inp").append(
+                    '<div class="alert alert-danger autherror">Введите телефон</div>'
+                );
+                hasErrors = true;
+            } else if (!phoneReg.test(phone)) {
+                $(".bizon_form_box_item.phone_inp").append(
+                    '<div class="alert alert-danger autherror">Неверный формат телефона</div>'
+                );
                 hasErrors = true;
             }
         }
@@ -104,5 +115,6 @@ $(document).ready(function() {
         if (!hasErrors) {
             $("#btnLogin").trigger("click");
         }
-    });
+        });
+
 });
