@@ -60,59 +60,46 @@ $(document).ready(function() {
         $("#input-userphone").val(phone);
     });
     
-$(document).on('click', ".btns", function(e) {
-    e.preventDefault();
-    e.stopImmediatePropagation(); 
-    $(".autherror").remove();
-
-    let hasErrors = false;
-
-    const name = $("#input-username").val()?.trim() || "";
-    const email = $("#input-useremail").val()?.trim() || "";
-    const phone = $("#input-userphone").val()?.trim() || "";
-
-    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneReg = /^\+[1-9][0-9]{6,14}$/;
-
-    if (name === "") {
-        $(".bizon_form_box_item.name_inp").append(
-            '<div class="alert alert-danger autherror">Введите имя</div>'
-        );
-        hasErrors = true;
-    } else if (name.length < 2) {
-        $(".bizon_form_box_item.name_inp").append(
-            '<div class="alert alert-danger autherror">Имя слишком короткое</div>'
-        );
-        hasErrors = true;
-    }
-
-    if (email === "") {
-        $(".bizon_form_box_item.email_inp").append(
-            '<div class="alert alert-danger autherror">Введите Email</div>'
-        );
-        hasErrors = true;
-    } else if (!emailReg.test(email)) {
-        $(".bizon_form_box_item.email_inp").append(
-            '<div class="alert alert-danger autherror">Некорректный Email</div>'
-        );
-        hasErrors = true;
-    }
-
-    if (phone === "") {
-        $(".bizon_form_box_item.phone_inp").append(
-            '<div class="alert alert-danger autherror">Введите телефон</div>'
-        );
-        hasErrors = true;
-    } else if (!phoneReg.test(phone)) {
-        $(".bizon_form_box_item.phone_inp").append(
-            '<div class="alert alert-danger autherror">Неверный формат телефона</div>'
-        );
-        hasErrors = true;
-    }
-
-    if (!hasErrors) {
-        $("#btnLogin").trigger("click");
-    }
+    $(document).on('click', ".btns", function () {
+        $(".bizon_form .field-error").remove();
+    
+        let hasErrors = false;
+    
+        const nameVal  = $(".name_inp input").val().trim();
+        const emailVal = $(".email_inp input").val()?.trim() || "";
+        const phoneVal = $(".phone_inp input").val()?.trim() || "";
+    
+        if (!nameVal) {
+            hasErrors = true;
+            $(".name_inp").closest('.bizon_form_box_item').append('<div class="field-error">Введите ваше имя</div>');
+        }
+    
+        if (emailVal) {
+            if (!/^\S+@\S+\.\S+$/.test(emailVal)) {
+                hasErrors = true;
+                $(".email_inp").closest('.bizon_form_box_item').append('<div class="field-error">Неверный формат Email</div>');
+            }
+        } else if ($(".email_inp").closest('.bizon_form_box_item').css('display') !== 'none') {
+            hasErrors = true;
+            $(".email_inp").closest('.bizon_form_box_item').append('<div class="field-error">Введите ваш Email</div>');
+        }
+    
+        if (phoneVal) {
+            if (!/^\+[1-9][0-9]{6,14}$/.test(phoneVal)) {
+                hasErrors = true;
+                $(".phone_inp").closest('.bizon_form_box_item').append('<div class="field-error">Неверный формат телефона</div>');
+            }
+        } else if ($(".phone_inp").closest('.bizon_form_box_item').css('display') !== 'none') {
+            hasErrors = true;
+            $(".phone_inp").closest('.bizon_form_box_item').append('<div class="field-error">Введите ваш телефон</div>');
+        }
+    
+        if (!hasErrors) {
+            $("#input-username").val(name);
+            $("#input-useremail").val(email);
+            $("#input-userphone").val(phone);
+            $("#btnLogin").trigger("click");
+        }
     });
 
 });
