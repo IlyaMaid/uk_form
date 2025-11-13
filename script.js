@@ -61,27 +61,48 @@ $(document).ready(function() {
     });
     
     $(document).on('click', ".btns", function() {
-        $(".alert-danger").remove();
+        $(".autherror").remove();
         let hasErrors = false;
-        let phone = $("input-userphone").val().trim();
-        let email = $("input-usermail").val().trim();
-        let name = $("input-username").val().trim();
-
-
-        
-        let phone = $("#input-userphone").val().trim();
-        if (/^\+[1-9][0-9]{6,14}$/.test(phone)) {
+    
+        const name = $("#input-username").val()?.trim() || "";
+        const email = $("#input-useremail").val()?.trim() || "";
+        const phone = $("#input-userphone").val()?.trim() || "";
+    
+        if (name.length < 2) {
+            if ($(".bizon_form_box_item.name_inp .autherror").length === 0) {
+                $(".bizon_form_box_item.name_inp").append(
+                    '<div class="alert alert-danger autherror">Введите корректное имя</div>'
+                );
+            }
+            hasErrors = true;
+        }
+    
+        if ($("#input-useremail").length > 0) {
+            const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailReg.test(email)) {
+                if ($(".bizon_form_box_item.email_inp .autherror").length === 0) {
+                    $(".bizon_form_box_item.email_inp").append(
+                        '<div class="alert alert-danger autherror">Некорректный Email</div>'
+                    );
+                }
+                hasErrors = true;
+            }
+        }
+    
+        if ($("#input-userphone").length > 0) {
+            const phoneReg = /^\+[1-9][0-9]{6,14}$/;
+            if (!phoneReg.test(phone)) {
+                if ($(".bizon_form_box_item.phone_inp .autherror").length === 0) {
+                    $(".bizon_form_box_item.phone_inp").append(
+                        '<div class="alert alert-danger autherror">Неверный формат телефона</div>'
+                    );
+                }
+                hasErrors = true;
+            }
+        }
+    
+        if (!hasErrors) {
             $("#btnLogin").trigger("click");
         }
-        else if ($(".alert-danger").text().length > 3) {
-            $(".bizon_form").append(
-                '<div class="alert alert-danger autherror">' + $(".alert-danger").html() + '</div>'
-            );
-        }
-        else {
-            $(".bizon_form").append(
-                '<div class="alert alert-danger autherror">Неверный формат</div>'
-                );
-        }
-        });
+    });
 });
