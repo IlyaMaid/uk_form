@@ -127,9 +127,9 @@ $(document).ready(function() {
         let hasErrors = false;
         let errorMessages = [];
 
-        let nameVal = $(".name_inp input").val().trim();
-        let emailVal = $(".email_inp input").val()?.trim();
-        let phoneVal = $(".phone_inp input").val()?.trim();
+        let nameVal = $("#input-username").val().trim();
+        let emailVal = $("#input-useremail").val()?.trim();
+        let phoneVal = $("#input-userphone").val()?.trim();
         
         if (!nameVal) {
             errorMessages.push("Введите ваше имя");
@@ -171,7 +171,7 @@ $(document).ready(function() {
         }
         
         function isValidPhone(phone) {
-            const phoneRegex = /^\+[1-9][0-9]{6,14}$/;
+            const phoneRegex = /^\+[0-9][0-9]{6,14}$/;
             return phoneRegex.test(phone);
         }
     });
