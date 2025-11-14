@@ -60,40 +60,35 @@ $(document).ready(function() {
         $("#input-userphone").val(phone);
     });
     
-$(document).on('click', ".btns", function () {
-    $(".bizon_form .field-error, .bizon_form .autherror").remove();
-
-    let hasErrors = false;
-
-    const nameVal = $(".name_inp input").val().trim();
-    const emailVal = $(".email_inp input").val()?.trim();
-    const phoneVal = $(".phone_inp input").val()?.trim();
-
-    if (!nameVal) {
-        hasErrors = true;
-        $(".name_inp").after('<div class="field-error autherror">Пожалуйста, введите ваше имя</div>');
-    }
-
-    if ($(".email_inp").is(":visible")) {
-        if (!emailVal || !/^\S+@\S+\.\S+$/.test(emailVal)) {
+    $(document).on('click', ".btns", function () {
+        $(".bizon_form .autherror").remove();
+    
+        let hasErrors = false;
+    
+        const nameVal = $(".name_inp input").val().trim();
+        const emailVal = $(".email_inp input").val()?.trim();
+        const phoneVal = $(".phone_inp input").val()?.trim();
+    
+        if (!nameVal) {
             hasErrors = true;
-            $(".email_inp").after('<div class="field-error autherror">Пожалуйста, введите корректный email</div>');
         }
-    }
-
-    if ($(".phone_inp").is(":visible")) {
-        if (!phoneVal || !/^\+[1-9][0-9]{6,14}$/.test(phoneVal)) {
+    
+        if ($(".email_inp").is(":visible") && (!emailVal || !/^\S+@\S+\.\S+$/.test(emailVal))) {
             hasErrors = true;
-            $(".phone_inp").after('<div class="field-error autherror">Пожалуйста, введите корректный телефон</div>');
         }
-    }
-
-    if (!hasErrors) {
-        $("#input-username").val(nameVal);
-        $("#input-useremail").val(emailVal);
-        $("#input-userphone").val(phoneVal);
-        $("#btnLogin").trigger("click");
-    }
-});
+    
+        if ($(".phone_inp").is(":visible") && (!phoneVal || !/^\+[1-9][0-9]{6,14}$/.test(phoneVal))) {
+            hasErrors = true;
+        }
+    
+        if (hasErrors) {
+            $(".bizon_form").append('<div class="alert alert-danger autherror">' + $(".alert-danger").html() + '</div>');
+        } else {
+            $("#input-username").val(nameVal);
+            $("#input-useremail").val(emailVal);
+            $("#input-userphone").val(phoneVal);
+            $("#btnLogin").trigger("click");
+        }
+    });
 
 });
