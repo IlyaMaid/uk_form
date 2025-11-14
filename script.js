@@ -103,15 +103,13 @@ $(document).ready(function() {
         }
         });
     
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-        
-        function isValidPhone(phone) {
-            const phoneRegex = /^\+[0-9][0-9]{6,14}$/;
-            return phoneRegex.test(phone);
-        }
-    });
-
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    function isValidPhone(phone) {
+        const phoneRegex = /^\+[0-9][0-9]{6,14}$/;
+        return phoneRegex.test(phone);
+    }
 });
