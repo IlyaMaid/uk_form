@@ -65,8 +65,8 @@ $(document).ready(function() {
         let hasErrors = false;
         let errorMessages = [];
 
-        let nameVal = $("#input-username").val().trim();
-        let emailVal = $("#input-useremail").val()?.trim();
+        let nameVal = $(".name_inp input").val().trim();
+        let emailVal = $(".email_inp input").val()?.trim();
         let phoneVal = $("#input-userphone").val()?.trim();
         
         if (!nameVal) {
