@@ -62,7 +62,6 @@ $(document).ready(function() {
     
     $(document).on('click', ".btns", function () {
         $(".autherror").remove();    
-        // let hasErrors = false;
         let errorMessages = [];
 
         let nameVal = $(".name_inp input").val().trim();
@@ -71,29 +70,24 @@ $(document).ready(function() {
         
         if (!nameVal) {
             errorMessages.push("Введите ваше имя");
-            // hasErrors = true;
         }
         
         if (!emailVal || !isValidEmail(emailVal)) {
             errorMessages.push("Введите корректный email");
-            // hasErrors = true;
         }
         
         if (!phoneVal || !isValidPhone(phoneVal)) {
             errorMessages.push("Неверный формат телефона");
-            // hasErrors = true;
         }
         
-        if ($(".alert-danger").length > 0 && $(".alert-danger").text().length > 3) {
-            let systemError = $(".alert-danger").html();
-            if (!errorMessages.includes(systemError)) {
-                errorMessages.push(systemError);
-            }
-            // hasErrors = true;
-        }
+        // if ($(".alert-danger").length > 0 && $(".alert-danger").text().length > 3) {
+        //     let systemError = $(".alert-danger").html();
+        //     if (!errorMessages.includes(systemError)) {
+        //         errorMessages.push(systemError);
+        //     }
+        // }
         
         if (errorMessages.length != 0) {
-        // if (errorMessages) {
             errorMessages.forEach(function(message) {
                 $(".bizon_form").append(
                     '<div class="alert alert-danger autherror">' + message + '</div>'
